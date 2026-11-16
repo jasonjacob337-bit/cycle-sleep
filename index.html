@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Menstrual cycle ↔ Sleep · Combined Evidence Dashboard</title>
+<style>
+:root{--ink:#1e1b4b;--ac:#4f46e5;--mut:#64748b;--bg:#f8fafc;--bd:#e2e8f0}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:#334155;line-height:1.45}
+main{max-width:1000px;margin:auto;padding:24px 16px}h1{color:var(--ink);margin:0 0 4px;font-size:26px}h2{color:var(--ink);font-size:17px;margin:28px 0 10px}
+.sub{color:var(--mut);margin:0 0 18px}.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:14px}.big{font-size:32px;font-weight:700;color:var(--ac)}
+.tot{background:var(--ac);color:#fff}.tot .big{color:#fff}.small{font-size:12px;color:var(--mut)}.tot .small{color:#e0e7ff}
+.chain{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.step{background:#eef2ff;border:1px solid var(--ac);color:var(--ac);font-weight:600;border-radius:10px;padding:10px 14px}.step.end{background:var(--ac);color:#fff}
+.bar{height:22px;background:var(--ac);border-radius:4px;color:#fff;font-size:12px;padding:2px 8px;white-space:nowrap}.row{margin:8px 0}
+.ans{margin-top:10px;font-weight:600;color:var(--ink);font-size:14px}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--bd);border-radius:12px;font-size:13px}th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--bd);vertical-align:top}th{color:var(--ink);background:#eef2ff}
+.chip{border-radius:99px;padding:2px 10px;font-size:11px;font-weight:700;border:1px solid;white-space:nowrap}
+.High{color:#047857;border-color:#10b981}.Moderate{color:var(--ac);border-color:var(--ac)}.Low{color:#b91c1c;border-color:#ef4444}.Caution{color:#b45309;border-color:#f59e0b}
+button{border:1px solid var(--bd);background:#fff;border-radius:99px;padding:5px 12px;cursor:pointer;margin-right:6px;font-size:12px}button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.tbl{overflow-x:auto}.refs{font-size:12px}.refs li{margin-bottom:6px}.note{font-size:12px;color:var(--mut);margin-top:8px}
+</style></head><body><main>
+<h1>Menstrual cycle phase ↔ Sleep quality</h1>
+<p class="sub">Combined evidence from WHOOP, Oura and PubMed · Hochschule Fresenius × Secvisio GmbH · Individual Factors</p>
+
+<div class="grid">
+<div class="card"><div class="small">WHOOP (Gonzalez, O'Day et al., 2026)</div><div class="big">2,596</div><div class="small">women · 42,759 cycles · ~1.2M days of data</div></div>
+<div class="card"><div class="small">Oura (Alzueta et al., 2022; 2024)</div><div class="big">142</div><div class="small">women tracked across a cycle (116 + 26)</div></div>
+<div class="card"><div class="small">PubMed reviews</div><div class="big">35</div><div class="small">studies (Jeon and Baek, 2023) + Nexha et al. (2024)</div></div>
+<div class="card tot"><div class="small">Combined</div><div class="big">2,738</div><div class="small">women with wearable data</div></div>
+</div>
+
+<h2>How the three sources fit together</h2>
+<div class="chain"><span class="step">Luteal phase</span>→<span class="step">Skin temp ↑ · resting HR ↑ · HRV ↓</span>→<span class="step end">Sleep: mostly unchanged</span></div>
+
+<h2>Three charts, three answers</h2>
+<div class="grid">
+<div class="card"><b>A · Does the body change with phase?</b>
+<div class="row"><div class="bar" style="width:92%">Skin temp: higher in luteal (p&lt;0.001)</div></div>
+<div class="row"><div class="bar" style="width:70%">Resting HR: higher in luteal (p&lt;0.03)</div></div>
+<div class="row"><div class="bar" style="width:45%;background:#818cf8">HRV: tends to be lower</div></div>
+<div class="ans">Yes. Clear, repeatable shifts at night. (Alzueta et al., 2022)</div></div>
+<div class="card"><b>B · Does sleep change with phase?</b>
+<div class="row"><div class="bar" style="width:12%;background:#94a3b8">≈0</div> <span class="small">Sleep efficiency, duration, latency, quality</span></div>
+<div class="ans">No significant change in healthy women (n = 116). (Alzueta et al., 2024)</div></div>
+<div class="card"><b>C · What does less sleep do?</b>
+<div class="row"><div class="bar" style="width:30%">RHR +1.2%</div></div>
+<div class="row"><div class="bar" style="width:70%;background:#818cf8">HRV −2.8%</div></div>
+<div class="ans">Per ~10% less sleep, in every phase. (Gonzalez et al., 2026)</div></div>
+</div>
+
+<h2>Evidence table (GRADE-style rating)</h2>
+<div id="f"></div>
+<div class="tbl"><table><thead><tr><th>Factor</th><th>Linked to</th><th>Direction</th><th>Result</th><th>Source</th><th>Rating</th></tr></thead><tbody id="tb"></tbody></table></div>
+<p class="note">All findings are statistical associations, not proof of causation. Ratings are the project team's judgement following GRADE domains (Guyatt et al., 2008): study design, sample size, consistency, directness.</p>
+
+<h2>References (Harvard)</h2>
+<ol class="refs">
+<li>Alzueta, E. et al. (2022) 'Tracking sleep, temperature, heart rate, and daily symptoms across the menstrual cycle with the Oura ring in healthy women', <i>International Journal of Women's Health</i>, 14, pp. 491–503.</li>
+<li>Alzueta, E. et al. (2024) 'Menstrual cycle variations in wearable-detected finger temperature and heart rate, but not in sleep metrics, in young and midlife individuals', <i>Journal of Biological Rhythms</i>, 39(5), pp. 395–412.</li>
+<li>Gonzalez, A., O'Day, J. et al. (2026) 'The menstrual cycle through the lens of a wearable device: insights into physiology, sleep, and cycle variability', <i>npj Digital Medicine</i>. doi:10.1038/s41746-026-02799-9.</li>
+<li>Guyatt, G.H. et al. (2008) 'GRADE: an emerging consensus on rating quality of evidence', <i>BMJ</i>, 336(7650), pp. 924–926.</li>
+<li>Jeon, B. and Baek, J. (2023) 'Menstrual disturbances and its association with sleep disturbances: a systematic review', <i>BMC Women's Health</i>, 23, 470.</li>
+<li>Nexha, A. et al. (2024) 'Biological rhythms in premenstrual syndrome and premenstrual dysphoric disorder: a systematic review', <i>BMC Women's Health</i>, 24, 551.</li>
+<li>National Library of Medicine (2026) <i>PubMed</i>. Available at: https://pubmed.ncbi.nlm.nih.gov/ (Accessed: 4 November 2026).</li></ol>
+</main>
+<script>
+const D=[
+["Luteal phase","Sleeping skin temperature","↑","Higher in mid/late luteal vs menses and ovulation (p<0.001)","Alzueta et al. (2022)","High"],
+["Luteal phase","Sleeping resting heart rate","↑","Higher in luteal phase (p<0.03); HRV (rMSSD) tended to be lower","Alzueta et al. (2022; 2024)","High"],
+["Cycle phase","Sleep efficiency, duration, wake time, latency, quality","none","No significant change in wearable or self-reported sleep (n = 116; n = 26)","Alzueta et al. (2022; 2024)","Moderate"],
+["Menses","Physical symptoms (self-reported)","↑","Moderately more symptoms during menses (p<0.001)","Alzueta et al. (2022)","Moderate"],
+["Sleep loss (~10%)","Resting HR / HRV","↑ / ↓","RHR +1.2%, HRV −2.8%, similar in every phase","Gonzalez et al. (2026)","Moderate"],
+["Luteal phase","Worse sleep for everyone","none","Not supported by objective data in healthy women","Alzueta et al. (2022; 2024)","Low"],
+["PMS / painful periods","Sleep satisfaction, efficiency, duration, alertness","↓","Associated with poorer sleep; mostly cross-sectional studies","Jeon and Baek (2023)","Caution"],
+["Short / inconsistent sleep","Cycle regularity","↓","More irregular cycles; direction of effect unclear","Gonzalez et al. (2026)","Caution"]];
+const tb=document.getElementById('tb'),f=document.getElementById('f');
+function draw(k){tb.innerHTML=D.filter(r=>k=='All'||r[5]==k).map(r=>`<tr>${r.slice(0,5).map(c=>`<td>${c}</td>`).join('')}<td><span class="chip ${r[5]}">${r[5]=='Low'?'Low / none':r[5]}</span></td></tr>`).join('');
+[...f.children].forEach(b=>b.classList.toggle('on',b.textContent==k))}
+['All','High','Moderate','Low','Caution'].forEach(k=>{const b=document.createElement('button');b.textContent=k;b.onclick=()=>draw(k);f.appendChild(b)});draw('All');
+</script></body></html>
